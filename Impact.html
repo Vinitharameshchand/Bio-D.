@@ -6,6 +6,7 @@
   <title>Impact | Bio D</title>
   <link rel="stylesheet" href="css/styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="js/main.js" defer></script>
 </head>
 <body class="impact">
   <!-- Header (kept minimal; content to be added step-by-step) -->
@@ -31,10 +32,10 @@
   <!-- Impact content will be added here step by step -->
   <main id="impact-root">
     <!-- Impact Hero Layout with placeholders -->
-    <section class="impact-hero">
+    <section class="impact-hero" data-animate-group>
       <div class="impact-hero-container">
         <!-- Left: Headline copy -->
-        <div class="impact-left">
+        <div class="impact-left" data-animate="fade-up">
           <h2 class="impact-headline">
             Impact at BioD is not just in numbers — it’s in every life touched, every
             <span class="pill-highlight">resource</span>
@@ -45,34 +46,34 @@
         </div>
 
         <!-- Right: Stacked cards with image/stat placeholders -->
-        <aside class="impact-right">
+        <aside class="impact-right" data-animate-group>
           <div class="impact-cards">
             <!-- Top-left image -->
-            <div class="impact-card impact-card-img">
+            <div class="impact-card impact-card-img" data-animate="zoom-in" style="--reveal-delay:0ms">
               <img src="assets/logo/impact_bluegrandma.png" alt="Impact photo" class="impact-card-img-el" />
             </div>
 
             <!-- Top-right stat card placeholder -->
-            <div class="impact-card impact-card-stat">
+            <div class="impact-card impact-card-stat" data-animate="fade-up" style="--reveal-delay:100ms">
               <div class="stat-heading">Placeholder Heading</div>
               <div class="stat-number">000</div>
               <div class="stat-desc">Placeholder description text goes here</div>
             </div>
 
             <!-- Middle-left cream stat pill placeholder -->
-            <div class="impact-card impact-card-pill">
+            <div class="impact-card impact-card-pill" data-animate="fade-up" style="--reveal-delay:150ms">
               <div class="pill-text">
                 Protect <b>000</b> [placeholder metric] per tonne of our material produced
               </div>
             </div>
 
             <!-- Middle-right image -->
-            <div class="impact-card impact-card-img small">
+            <div class="impact-card impact-card-img small" data-animate="zoom-in" style="--reveal-delay:200ms">
               <img src="assets/logo/impact_grandpaonfield.png" alt="Impact photo" class="impact-card-img-el" />
             </div>
 
             <!-- Bottom-left green pill placeholder -->
-            <div class="impact-card impact-card-green">
+            <div class="impact-card impact-card-green" data-animate="fade-up" style="--reveal-delay:250ms">
               <div class="pill-text">Degrades in less than <b>0</b> months</div>
             </div>
           </div>
@@ -81,16 +82,16 @@
     </section>
 
     <!-- Impact Snapshot (next page/section) -->
-    <section class="impact-snapshot-section">
+    <section class="impact-snapshot-section" data-animate-group>
       <div class="snapshot-container">
-        <div class="snapshot-header">
+        <div class="snapshot-header" data-animate="fade-up">
           <span class="snapshot-dot">•</span>
           <span class="snapshot-title">Impact Snapshot</span>
         </div>
 
         <div class="snapshot-grid">
           <!-- Card 1 -->
-          <div class="snapshot-item">
+          <div class="snapshot-item" data-animate="fade-up" style="--reveal-delay:0ms">
             <div class="snapshot-icon icon-placeholder" aria-hidden="true"></div>
             <div class="snapshot-number">00</div>
             <div class="snapshot-meta">MICRON SIZED</div>
@@ -98,21 +99,21 @@
           </div>
 
           <!-- Card 2 -->
-          <div class="snapshot-item">
+          <div class="snapshot-item" data-animate="fade-up" style="--reveal-delay:100ms">
             <div class="snapshot-icon icon-placeholder" aria-hidden="true"></div>
             <div class="snapshot-meta">UTILIZES WASTE</div>
             <div class="snapshot-label">REDUCES AGRICULTURAL WASTE</div>
           </div>
 
           <!-- Card 3 -->
-          <div class="snapshot-item">
+          <div class="snapshot-item" data-animate="fade-up" style="--reveal-delay:200ms">
             <div class="snapshot-icon icon-placeholder" aria-hidden="true"></div>
             <div class="snapshot-meta">COMPLETELY</div>
             <div class="snapshot-label">BIODEGRADABLE</div>
           </div>
 
           <!-- Card 4 -->
-          <div class="snapshot-item">
+          <div class="snapshot-item" data-animate="fade-up" style="--reveal-delay:300ms">
             <div class="snapshot-icon icon-placeholder" aria-hidden="true"></div>
             <div class="snapshot-number">06</div>
             <div class="snapshot-meta">MONTHS</div>
@@ -120,7 +121,7 @@
           </div>
 
           <!-- CTA pill -->
-          <a href="#" class="snapshot-cta" aria-label="Learn more">
+          <a href="#" class="snapshot-cta" aria-label="Learn more" data-animate="fade-up" style="--reveal-delay:350ms">
             <span>Learn More</span>
             <span class="cta-arrow">›</span>
           </a>
@@ -129,49 +130,49 @@
     </section>
 
     <!-- Join Us / Metrics + Map (next page) -->
-    <section class="impact-join-section">
+    <section class="impact-join-section" data-animate-group>
       <div class="join-container">
-        <div class="join-header">
+        <div class="join-header" data-animate="fade-up">
           <span>Join us</span> in the fight for the <span class="join-strong">environment</span> !
         </div>
 
         <div class="join-grid">
           <!-- Left: stacked metric cards (placeholders) -->
-          <div class="join-cards">
-            <div class="join-card dark">
+          <div class="join-cards" data-animate-group>
+            <div class="join-card dark" data-animate="fade-up" style="--reveal-delay:0ms">
               <div class="join-meta">Carbon Emissions</div>
               <div class="join-number">5000+</div>
               <div class="join-unit">Tons</div>
             </div>
-            <div class="join-card dark two-col">
+            <div class="join-card dark two-col" data-animate="fade-up" style="--reveal-delay:120ms">
               <div class="join-pill">Production Costs<br><b>15–20%</b></div>
               <div class="join-pill">Farmer Income<br><b>10–15%</b></div>
             </div>
-            <div class="join-card green">
+            <div class="join-card green" data-animate="fade-up" style="--reveal-delay:220ms">
               <div class="join-pill"><b>0</b> Micron Microplastics</div>
             </div>
           </div>
 
           <!-- Center: three image placeholders like vertical cards -->
-          <div class="join-images">
-            <div class="img-vert-card"><div class="ph">Image</div></div>
-            <div class="img-vert-card"><div class="ph">Image</div></div>
-            <div class="img-vert-card"><div class="ph">Image</div></div>
+          <div class="join-images" data-animate-group>
+            <div class="img-vert-card" data-animate="zoom-in" style="--reveal-delay:0ms"><div class="ph">Image</div></div>
+            <div class="img-vert-card" data-animate="zoom-in" style="--reveal-delay:120ms"><div class="ph">Image</div></div>
+            <div class="img-vert-card" data-animate="zoom-in" style="--reveal-delay:220ms"><div class="ph">Image</div></div>
           </div>
 
           <!-- Right: SDG and jobs + degrade pill (placeholders) -->
-          <div class="join-right">
-            <div class="join-pill-outline">Completely degrades within <b>6</b> months</div>
-            <div class="join-image-card"><div class="ph">Image</div><div class="join-jobs">Direct Jobs <b>100+</b></div></div>
-            <div class="join-sdg-card"><div class="ph">SDG</div></div>
-            <div class="join-pill-outline small">Replacement to <b>Microplastics</b></div>
+          <div class="join-right" data-animate-group>
+            <div class="join-pill-outline" data-animate="fade-up" style="--reveal-delay:0ms">Completely degrades within <b>6</b> months</div>
+            <div class="join-image-card" data-animate="zoom-in" style="--reveal-delay:120ms"><div class="ph">Image</div><div class="join-jobs">Direct Jobs <b>100+</b></div></div>
+            <div class="join-sdg-card" data-animate="fade-up" style="--reveal-delay:220ms"><div class="ph">SDG</div></div>
+            <div class="join-pill-outline small" data-animate="fade-up" style="--reveal-delay:320ms">Replacement to <b>Microplastics</b></div>
           </div>
         </div>
 
         <!-- Bottom: India map row with right side text -->
-        <div class="join-map-row">
-          <div class="map-placeholder"><div class="ph">India Map</div></div>
-          <div class="map-side-text">
+        <div class="join-map-row" data-animate-group>
+          <div class="map-placeholder" data-animate="zoom-in"><div class="ph">India Map</div></div>
+          <div class="map-side-text" data-animate="fade-up" style="--reveal-delay:150ms">
             <div class="map-stat">Rice straw burning causes<br><b>40%</b><br>of air pollution in north India</div>
             <div class="map-q">Our source?</div>
           </div>
@@ -181,30 +182,30 @@
   </main>
 
   <!-- Full-bleed landing background section: Voices/Testimonial -->
-  <section class="impact-landing-bg-section" aria-label="Community voices">
+  <section class="impact-landing-bg-section" aria-label="Community voices" data-animate-group>
     <div class="voices-container">
       <div class="voices-head">
-        <h2 class="voices-title">Voices that <span class="voices-strong">inspire us</span></h2>
-        <p class="voices-sub">hear what our community says about BioD.</p>
+        <h2 class="voices-title" data-animate="fade-up">Voices that <span class="voices-strong">inspire us</span></h2>
+        <p class="voices-sub" data-animate="fade-up" style="--reveal-delay:120ms">hear what our community says about BioD.</p>
       </div>
 
       <div class="voices-grid">
         <!-- Left column -->
-        <div class="voice-col">
-          <blockquote class="voice-quote">
+        <div class="voice-col" data-animate-group>
+          <blockquote class="voice-quote" data-animate="fade-up">
             “I’ve witnessed their journey from an ambitious concept to a tangible, sustainable solution. Their dedication to transforming agricultural waste into eco‑friendly packaging reflects genuine commitment to social and environmental impact. What sets them apart is their openness to learning, adaptability, and a clear vision for creating meaningful change.”
           </blockquote>
-          <div class="voice-photo">
+          <div class="voice-photo" data-animate="zoom-in" style="--reveal-delay:120ms">
             <div class="ph">Image</div>
           </div>
         </div>
 
         <!-- Right column -->
-        <div class="voice-col">
-          <blockquote class="voice-quote">
+        <div class="voice-col" data-animate-group>
+          <blockquote class="voice-quote" data-animate="fade-up">
             “Mentoring the Bio D team has been a truly rewarding experience. Their commitment to innovation, sustainability, and social impact is matched by a remarkable drive to keep learning and improving. What impresses me most is their ability to turn an idea—transforming rice straw waste into biodegradable packaging—into a well‑researched and purpose‑driven solution.”
           </blockquote>
-          <div class="voice-photo dark">
+          <div class="voice-photo dark" data-animate="zoom-in" style="--reveal-delay:120ms">
             <div class="ph">Image</div>
           </div>
         </div>

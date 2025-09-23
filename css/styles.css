@@ -1562,3 +1562,35 @@ body.impact {
   display: none !important;
   content: none !important;
 }
+
+/* ------------------------------ */
+/* Scroll reveal animations (index) */
+/* ------------------------------ */
+@media (prefers-reduced-motion: no-preference) {
+  [data-animate] {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 600ms ease, transform 600ms ease, filter 600ms ease;
+    will-change: opacity, transform, filter;
+  }
+  [data-animate].in-view {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+
+  /* Variants */
+  [data-animate="fade-up"] { transform: translateY(24px); }
+  [data-animate="fade-down"] { transform: translateY(-24px); }
+  [data-animate="fade-left"] { transform: translateX(24px); }
+  [data-animate="fade-right"] { transform: translateX(-24px); }
+  [data-animate="zoom-in"] { transform: scale(.96); }
+
+  /* Stagger support via CSS variable set inline or by JS */
+  [data-animate] { transition-delay: var(--reveal-delay, 0ms); }
+}
+
+/* If user prefers reduced motion, show content immediately */
+@media (prefers-reduced-motion: reduce) {
+  [data-animate] { opacity: 1 !important; transform: none !important; }
+}

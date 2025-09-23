@@ -6,6 +6,7 @@
     <title>Bio D</title>
     <link rel="stylesheet" href="css/styles.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="js/main.js" defer></script>
 </head>
 <body class="home">
     <header>
@@ -55,19 +56,19 @@
     <!-- 1st section of homepage  -->
 
     <!-- 2nd section of home page -->
-    <section class="about-section">
+    <section class="about-section" data-animate-group>
         <div class="about-container">
-            <div class="about-bullet">
+            <div class="about-bullet" data-animate="fade-up">
                 <span class="about-dot">•</span> We at <span class="about-bold">BioD</span>
             </div> 
-            <div class="about-main-text">
+            <div class="about-main-text" data-animate="fade-up">
                 <p>With a passion for <span class="about-strong">science and sustainability</span>, we’re committed to creating innovative materials that reduce waste and protect our planet. Together, we’re shaping the <span class="about-strong">future of materials</span> for a more sustainable tomorrow.</p>
             </div>
             <div class="about-sub-and-btn">
-                <div class="about-sub-text">
+                <div class="about-sub-text" data-animate="fade-up">
                     <p><em>By combining creativity with eco-innovation, we transform everyday problems into planet-friendly solutions and contribute to a greener world.</em></p>
                 </div>
-                <div class="about-btn-row">
+                <div class="about-btn-row" data-animate="fade-up">
                     <a href="solution.html">
                         <button class="about-cta-btn">Learn More</button>
                     </a>
@@ -78,27 +79,27 @@
 
     <!-- recognized section homepage -->
     </section>
-    <section class="recognized-section">
+    <section class="recognized-section" data-animate-group>
         <div class="recognized-container">
-            <div class="recognized-bullet">
+            <div class="recognized-bullet" data-animate="fade-up">
                 <span class="recognized-dot">•</span> <span class="recognized-text">Recognized by</span>
             </div>
             <div class="recognized-logos">
-                <img src="assets/logo/THUB LOGO.png" alt="t-hub" class="recognized-logo">
-                <img src="assets/logo/mercedes logo.png" alt="Mercedes" class="recognized-logo">
-                <img src="assets/logo/FFC logo.png" alt="The Future Founders Co." class="recognized-logo">
-                <img src="assets/logo/samsung logo.png" alt="Samsung" class="recognized-logo">
-                <img src="assets/logo/osg logo.png" alt="OSE" class="recognized-logo">
+                <img src="assets/logo/THUB LOGO.png" alt="t-hub" class="recognized-logo" data-animate="fade-up" style="--reveal-delay:0ms">
+                <img src="assets/logo/mercedes logo.png" alt="Mercedes" class="recognized-logo" data-animate="fade-up" style="--reveal-delay:100ms">
+                <img src="assets/logo/FFC logo.png" alt="The Future Founders Co." class="recognized-logo" data-animate="fade-up" style="--reveal-delay:200ms">
+                <img src="assets/logo/samsung logo.png" alt="Samsung" class="recognized-logo" data-animate="fade-up" style="--reveal-delay:300ms">
+                <img src="assets/logo/osg logo.png" alt="OSE" class="recognized-logo" data-animate="fade-up" style="--reveal-delay:400ms">
             </div>
         </div>
     </section>
     <!-- recognized section homepage ends -->
 
     <!-- 4th section of home page  -->
-    <section class="closer-look-section">
+    <section class="closer-look-section" data-animate-group>
         <div class="closer-look-container">
-            <h2 class="closer-look-title">A Closer Look!</h2>
-            <div class="closer-look-video-frame">
+            <h2 class="closer-look-title" data-animate="fade-up">A Closer Look!</h2>
+            <div class="closer-look-video-frame" data-animate="zoom-in">
                 <video id="closerLookVideo" class="closer-look-video" playsinline muted preload="metadata" controls controlsList="nodownload noplaybackrate" disablePictureInPicture oncontextmenu="return false;" poster="assets/logo/video-thumb.jpg">
                     <source src="assets/logo/BioD Video.mp4" type="video/mp4">
                     Your browser does not support the video tag.
@@ -191,21 +192,21 @@
     </script>
 
      <!-- homepage footer -->
-    <section class="stats-section">
+    <section class="stats-section" data-animate-group>
       <div class="stats-cards-row">
-        <div class="stats-card stats-card-img">
+        <div class="stats-card stats-card-img" data-animate="fade-right">
           <img src="assets/logo/Field on hand.jpeg" alt="Field on hand image" class="stats-img" />
         </div>
-        <div class="stats-card stats-card-info">
+        <div class="stats-card stats-card-info" data-animate="fade-up">
           <div class="stats-card-arrow-top">&#8594;</div>
           <div class="stats-card-number">150+</div>
           <div class="stats-card-title">Direct jobs created</div>
           <div class="stats-card-desc">Through our supply chain, we've empowered farming communities by creating new livelihood opportunities. What was once considered waste now generates income</div>
         </div>
-        <div class="stats-card stats-card-img">
+        <div class="stats-card stats-card-img" data-animate="fade-left">
           <img src="assets/logo/Burning field.png" alt="Burning field" class="stats-img" />
         </div>
-        <div class="stats-card stats-card-info">
+        <div class="stats-card stats-card-info" data-animate="fade-up" style="--reveal-delay:100ms">
           <div class="stats-card-arrow-top">&#8594;</div>
           <div class="stats-card-number">3000+</div>
           <div class="stats-card-title">Tons of carbon emissions reduced</div>
@@ -213,8 +214,8 @@
         </div>
       </div>
       <div class="stats-closing">
-        <div class="stats-closing-main">Together, we are not just <span class="stats-bold">reducing waste</span> — we’re redefining <span class="stats-bold">sustainability for tomorrow.</span></div>
-        <div class="stats-closing-sub">By converting agricultural by-products into sustainable materials, BioD is proving that innovation can align with environmental responsibility and social progress.</div>
+        <div class="stats-closing-main" data-animate="fade-up">Together, we are not just <span class="stats-bold">reducing waste</span> — we’re redefining <span class="stats-bold">sustainability for tomorrow.</span></div>
+        <div class="stats-closing-sub" data-animate="fade-up" style="--reveal-delay:120ms">By converting agricultural by-products into sustainable materials, BioD is proving that innovation can align with environmental responsibility and social progress.</div>
       </div>
     </section>
     <!-- homepage footer ends -->
