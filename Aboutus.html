@@ -1,63 +1,130 @@
+<!-- About Us Page for Bio D -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Meta and Title Information -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Us | Bio D</title>
+  <!-- Main Stylesheet -->
   <link rel="stylesheet" href="css/styles.css" />
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="aboutus">
+  <!-- Header and Navigation Bar -->
   <header>
-    <nav class="navbar">
-      <div class="logo">
-        <img src="assets/logo/biodlogo.png" alt="Bio D" class="logo-img">
-        <span class="logo-text">Bio D</span>
+  <nav class="navbar">
+  <!-- Logo Section -->
+  <div class="logo">
+  <img src="assets/logo/biodlogo.png" alt="Bio D" class="logo-img">
+  <span class="logo-text">Bio D</span>
       </div>
-      <ul class="nav-menu">
-        <li><a href="solution.html">Solution</a></li>
-        <li><a href="Impact.html">Impact</a></li>
-        <li class="active"><a href="#" class="aboutus-active">About Us</a></li>
+  <!-- Navigation Menu -->
+  <ul class="nav-menu">
+  <li><a href="solution.html">Solution</a></li>
+  <li><a href="Impact.html">Impact</a></li>
+  <li class="active"><a href="#" class="aboutus-active">About Us</a></li> <!-- Current Page -->
       </ul>
-      <div class="hamburger">
+ 
+      <!-- Hamburger Menu for Mobile -->
+  <div class="hamburger">
         <span></span>
         <span></span>
         <span></span>
       </div>
     </nav>
   </header>
-
-  <!-- About Us Section 1: Hero Text Overlay -->
-  <section class="aboutus-hero-overlay" style="position: absolute; top: 0; left: 0; width: 100vw; height: 60vh; min-height: 400px; display: flex; align-items: flex-end; justify-content: center; z-index: 2; padding-bottom: 6vh;">
-    <div style="text-align: center; color: #fff; width: 100%; max-width: 900px; padding: 0 2rem;">
-      <h2 style="font-size: 2.6rem; font-weight: 400; line-height: 1.2; margin-bottom: 2.2rem;">
-        <span style="font-weight: 700;">Join us</span> on our journey to turn<br>
-        <span style="font-weight: 700;">waste</span> into <span style="font-weight: 700;">opportunity</span> and<br>
-        build a greener tomorrow.
-      </h2>
-      <a href="#" style="color: #fff; text-decoration: underline; font-size: 1.3rem; font-style: italic;">Join our team</a>
-    </div>
-  </section>
-
-  <div style="height: 60vh; min-height: 400px; width: 100vw; background: url('assets/logo/about us page bg.png') no-repeat center center; background-size: cover; filter: brightness(0.6);"></div>
-
   
-  <!-- About Us Section 2: Meet our Team and Description -->
-  <section class="aboutus-second-section" style="background: #faf7ef; padding: 4rem 0; display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: center; gap: 2rem;">
-    <div style="flex: 1 1 260px; max-width: 320px; min-width: 200px; text-align: left; font-style: italic; color: #222; font-size: 1.1rem; padding-left: 2rem;">
-      <span style="font-size: 1.2rem;">&bull; Meet our Team</span>
+  <!-- Hero Section with Background Image -->
+  <div class="aboutus-hero-bg">
+  <div class="aboutus-hero-content">
+  <!-- Main Hero Text -->
+  <h2><span class="aboutus-bold">Join us</span> on our journey to turn <br><span class="aboutus-bold">waste</span> into <span class="aboutus-bold">opportunity</span> and<br>build a greener tomorrow.</h2>
+  <!-- Call to Action Button -->
+  <a href="#" class="aboutus-link">Join our team</a>
     </div>
-    <div style="flex: 2 1 400px; max-width: 700px; min-width: 260px; color: #222; font-size: 1.1rem;">
-      We are a passionate <span style="font-weight: bold;">group of young innovators</span> from diverse backgrounds — <span style="font-weight: bold;">design, technology, communication, and management</span> — united by one vision: to create sustainable solutions that redefine tomorrow.
+  </div>
+  <!-- Team Section -->
+  <section class="aboutus-team-section">
+  <div class="aboutus-team-container">
+  <!-- Team Bullet Point -->
+  <div class="aboutus-team-bullet">
+  <span class="aboutus-team-dot">•</span> <span class="aboutus-team-label">Meet our Team</span>
+      </div>
+  <!-- Team Description -->
+  <div class="aboutus-team-desc">
+  We are a passionate <span class="aboutus-team-bold">group of young innovators</span> from diverse backgrounds — <span class="aboutus-team-bold">design, technology, communication, and management</span> — united by one vision: to create sustainable solutions that redefine tomorrow.
+      </div>
     </div>
   </section>
   
-  <!-- Team Photo after Section 3 -->
-  <section class="aboutus-team-photo-section" >
-    <img src="assets/logo/team pic_at about us page .png" alt="Bio D Team Photo" style="width: 700%; max-width: 700px; min-width: 260px; height: auto; display: block; margin: 0 auto; border-radius: 100px; " />
+  <!-- Team Photo Banner Section: edge-to-edge image directly below the team text -->
+  <section class="aboutus-team-photo-section">
+    <div class="aboutus-team-photo-wrap">
+      <img src="assets/logo/team pic_at about us page .png" alt="Bio D team group photo" class="aboutus-team-photo" />
+    </div>
+  </section>
+  
+  <!-- Decorative/Background image after team banner -->
+  <section class="aboutus-team-bg-section">
+    <!-- Team Members moved into this section -->
+    <div class="aboutus-members-container">
+      <!-- Member 1 -->
+      <div class="aboutus-member-row">
+        <div class="aboutus-member-text">
+          <div class="aboutus-member-name">Irum Fathima</div>
+          <div class="aboutus-member-role">Co Founder</div>
+          <p class="aboutus-member-bio">Irum leads BioD’s vision of shaping the future of sustainable materials. With a background in architecture and design innovation, she drives product development, partnerships, and strategy. She is passionate about creating solutions that protect the planet while empowering communities.</p>
+        </div>
+        <div class="aboutus-member-photo-col">
+          <img src="assets/logo/Irum Fathima_about us.png" alt="Irum Fathima" class="aboutus-member-photo" />
+        </div>
+      </div>
+
+      <!-- Member 2 -->
+      <div class="aboutus-member-row">
+        <div class="aboutus-member-text">
+          <div class="aboutus-member-name">Simone Fonseca</div>
+          <div class="aboutus-member-role">Co Founder</div>
+          <p class="aboutus-member-bio">Simone leads BioD’s story of sustainability, blending design and communication to connect with businesses and consumers. She also shapes the company’s marketing strategies and business model, ensuring BioD’s eco-friendly innovations are impactful, accessible, and built for long‑term growth.</p>
+        </div>
+        <div class="aboutus-member-photo-col">
+          <img src="assets/logo/Simone Fonseca_aboutus.png" alt="Simone Fonseca" class="aboutus-member-photo" />
+        </div>
+      </div>
+
+      <!-- Member 3 -->
+      <div class="aboutus-member-row">
+        <div class="aboutus-member-text">
+          <div class="aboutus-member-name">Hemanth R.</div>
+          <div class="aboutus-member-role">Head of Lab Operations</div>
+          <p class="aboutus-member-bio">Hemanth leads the science behind BioD’s materials. With a strong foundation in chemistry and materials research, he experiments, tests, and refines our products. His technical expertise ensures innovation stays practical, scalable, and impactful.</p>
+        </div>
+        <div class="aboutus-member-photo-col">
+          <img src="assets/logo/Hemanth R_aboutus.png" alt="Hemanth R." class="aboutus-member-photo" />
+        </div>
+      </div>
+
+      <!-- Member 4 -->
+      <div class="aboutus-member-row">
+        <div class="aboutus-member-text">
+          <div class="aboutus-member-name">Anaghaa KR.</div>
+          <div class="aboutus-member-role">Research and Development</div>
+          <p class="aboutus-member-bio">Anaghaa supports BioD’s R&D journey with testing, formulation, and lab operations. Her precision and curiosity help accelerate the development of sustainable materials and bring ideas closer to real‑world impact.</p>
+        </div>
+        <div class="aboutus-member-photo-col">
+          <img src="assets/logo/Anaghaa KR._about us.png" alt="Anaghaa KR." class="aboutus-member-photo" />
+        </div>
+      </div>
+    </div>
   </section>
 
-
-
-  </body>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <span>&copy; 2025 Bio D. All rights reserved.</span>
+    </div>
+  </footer>
+</body>
 </html>

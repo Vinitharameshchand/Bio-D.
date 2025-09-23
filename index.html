@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/styles.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="home">
     <header>
         <nav class="navbar">
             <div class="logo">
@@ -99,14 +99,96 @@
         <div class="closer-look-container">
             <h2 class="closer-look-title">A Closer Look!</h2>
             <div class="closer-look-video-frame">
-                <img src="assets/logo/video-thumb.jpg" alt="Video preview" class="closer-look-video-thumb">
-                <button class="closer-look-play-btn" type="button" aria-label="Play video">
-                    <span class="closer-look-play-icon" aria-hidden="true">&#9654;</span>
-                </button>
+                <video id="closerLookVideo" class="closer-look-video" playsinline muted preload="metadata" controls controlsList="nodownload noplaybackrate" disablePictureInPicture oncontextmenu="return false;" poster="assets/logo/video-thumb.jpg">
+                    <source src="assets/logo/BioD Video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
         </div>
     </section>
     <!-- 4th section of home page -->
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const video = document.getElementById('closerLookVideo');
+        if (!video) return;
+        const frame = video.closest('.closer-look-video-frame') || video;
+
+        let isHovering = false;
+        let audioEnabled = false;
+        let isInteracting = false; // when user is dragging/seeking/using controls
+
+        const tryPlayIfHover = () => {
+          if (!isHovering) return;
+          // Try to play with audio if permitted
+          video.muted = !audioEnabled;
+          if (audioEnabled) video.volume = 0.7;
+          const p = video.play();
+          if (p && typeof p.catch === 'function') p.catch(() => {
+            // If audio is blocked, keep it muted while hovering
+            video.muted = true;
+            video.play().catch(() => {});
+          });
+        };
+
+        const tryPause = () => {
+          if (isInteracting) return; // don't pause while user interacts with controls
+          if (!video.paused) video.pause();
+        };
+
+        // Only play while hovering over the video area
+        const onEnter = () => { isHovering = true; tryPlayIfHover(); };
+        const onLeave = () => { isHovering = false; tryPause(); };
+
+        frame.addEventListener('pointerenter', onEnter);
+        frame.addEventListener('pointerleave', onLeave);
+        video.addEventListener('pointerenter', onEnter);
+        video.addEventListener('pointerleave', onLeave);
+
+        // Treat interactions with native controls as active interaction to avoid accidental pauses
+        const startInteract = () => { isInteracting = true; };
+        const endInteract = () => { isInteracting = false; if (!isHovering) tryPause(); };
+        video.addEventListener('mousedown', startInteract);
+        video.addEventListener('mouseup', endInteract);
+        video.addEventListener('touchstart', startInteract, { passive: true });
+        video.addEventListener('touchend', endInteract, { passive: true });
+        video.addEventListener('seeking', startInteract);
+        video.addEventListener('seeked', endInteract);
+
+        // Enable audio on first explicit click/touch; still requires hover to play
+        const enableAudio = () => { audioEnabled = true; tryPlayIfHover(); };
+        // Enable audio on click/touch on both frame and video (some browsers capture events on controls)
+        frame.addEventListener('click', enableAudio, { passive: true });
+        video.addEventListener('click', enableAudio, { passive: true });
+        frame.addEventListener('touchstart', enableAudio, { passive: true });
+        video.addEventListener('touchstart', enableAudio, { passive: true });
+
+        // When not sufficiently visible, pause; avoid pausing on any scroll while still visible to allow seeking
+
+        try {
+          const observer = new IntersectionObserver(([entry]) => {
+            if (!entry.isIntersecting || entry.intersectionRatio < 0.5) {
+              tryPause();
+            } else if (isHovering) {
+              tryPlayIfHover();
+            }
+          }, { threshold: [0, 0.5, 1] });
+          observer.observe(frame);
+        } catch (_) {
+          // Fallback: check visibility on scroll/resize
+          const checkVisibility = () => {
+            const rect = frame.getBoundingClientRect();
+            const vh = window.innerHeight || document.documentElement.clientHeight;
+            const visible = Math.max(0, Math.min(rect.bottom, vh) - Math.max(rect.top, 0));
+            const visibility = visible / Math.max(1, rect.height);
+            if (visibility < 0.5) tryPause();
+            else if (isHovering) tryPlayIfHover();
+          };
+          window.addEventListener('scroll', checkVisibility, { passive: true });
+          window.addEventListener('resize', checkVisibility);
+        }
+      });
+    </script>
 
      <!-- homepage footer -->
     <section class="stats-section">
