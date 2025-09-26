@@ -11,10 +11,10 @@
   <body class="solution">
     <header>
       <nav class="navbar">
-        <div class="logo">
+        <a href="index.html" class="logo" style="text-decoration: none; color: inherit;">
           <img src="assets/logo/biodlogo.png" alt="Bio D" class="logo-img" />
           <span class="logo-text">Bio D</span>
-        </div>
+        </a>
         <ul class="nav-menu">
           <li><a href="solution.html">Solution</a></li>
           <li><a href="Impact.html">Impact</a></li>
@@ -42,7 +42,7 @@
             <!-- Metric 1 -->
             <div class="metric" data-animate="fade-up" style="--reveal-delay:60ms">
               <div class="metric-number">2.5</div>
-              <div class="metric-unit">BILLION</div>
+              <div class="metric-unit"><b> BILLION</b></div>
               <div class="metric-label">Plastic‑coated paper cups discarded in India annually.</div>
             </div>
             <div class="metric-divider"></div>
@@ -63,7 +63,31 @@
         </div>
       </div>
     </main>
-    <section class="solution-below-hero" aria-hidden="true"></section>
+
+    <!-- Solution Image Section -->
+    <section class="solution-image-section">
+      <div class="solution-image-container">
+        <img src="assets/logo/solution image part1.png" alt="Solution" class="solution-main-image">
+      </div>
+    </section>
+
+    <!-- Additional Solution Content -->
+    <section class="solution-additional-content" aria-label="Additional solution details">
+      <div class="solution-images-container">
+        <img src="assets/logo/solution image part 2.png" alt="Solution Part 2" class="solution-image">
+        <div class="solution-part3">
+          <div class="solution-video-container">
+            <video class="solution-video" autoplay loop muted playsinline>
+              <source src="assets/logo/solution part3 video.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+        <img src="assets/logo/solution image part 4.png" alt="Solution Part 4" class="solution-image">
+      </div>
+    </section>
+
+    
 
     <!-- Footer: Contact block consistent with index -->
     <footer class="site-footer contact-footer">
@@ -107,7 +131,7 @@
                   <path d="M4 6l8 6 8-6" stroke="currentColor" stroke-width="1.6" fill="none"/>
                 </svg>
               </span>
-              <a class="contact-link" href="mailto:info@biodapt.in">info@biodapt.in</a>
+              <a class="contact-link" href="mailto:biodpackaging@gmail.com">biodpackaging@gmail.com</a>
             </li>
           </ul>
         </div>

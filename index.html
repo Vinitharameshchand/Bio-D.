@@ -7,15 +7,16 @@
     <link rel="stylesheet" href="css/styles.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..900&display=swap" rel="stylesheet">
     <script src="js/main.js" defer></script>
+    <script src="js/remove-focus-outline.js" defer></script>
+    <script src="js/freeze-button.js" defer></script>
 </head>
 <body class="home">
     <header>
         <nav class="navbar">
-            <div class="logo">
-                <!-- Updated logo image if needed-->
+            <a href="index.html" class="logo" style="text-decoration: none; color: inherit;">
                 <img src="assets/logo/biodlogo.png" alt="Bio D" class="logo-img">
                 <span class="logo-text">Bio D</span>
-            </div>
+            </a>
             <ul class="nav-menu">
                 <li><a href="solution.html">Solution</a></li>
                 <li><a href="Impact.html">Impact</a></li>
@@ -38,19 +39,19 @@
                     <h1 class="hero-title" style="margin: 0;">Bio D</h1>
                 </div>
             </div>
-            <br> </br>
+            
             <p class="hero-subtitle"><i>From <span class="highlight">Agriculture</span> to <span class="highlight">sustainable</span><br><span class="highlight">packaging</span></i></p>
             <div class="feature-tags">
             </div>
         </div>
-        <div class="cta-button-wrapper">
-            <a href="Impact.html">
-                <button class="cta-button">
-                    Learn More
-                    <span class="arrow">></span>
-                </button>
-            </a>
+        <div class="cta-button-wrapper" id="impactButton">
+            <img src="assets/logo/Learn more button.png" alt="Learn More" class="cta-button-image">
         </div>
+        <script>
+            document.getElementById('impactButton').addEventListener('click', function() {
+                window.location.href = 'Impact.html';
+            });
+        </script>
         <div class="feature-tags-bottom">
           <span>Sustainability  </span>
           <span>Innovation  </span>
@@ -66,8 +67,8 @@
                 <span class="about-dot">•</span> We at <span class="about-bold">BioD</span>
             </div> 
             <div class="about-main-text" data-animate="fade-up">
-                <p>With a passion for <span class="about-strong">science and sustainability  </span> , We're
-                   committed to creating innovative materials that reduce waste and protect our planet. Together, we’re shaping the <span class="about-strong">future of materials</span> for a more sustainable tomorrow.</p>
+                <p>With a passion for <span class="about-strong"><b> science and sustainability  </b></span> , We're
+                   committed to creating innovative materials that reduce waste and protect our planet. Together, we’re shaping the <span class="about-strong"><b>future of materials</b><span> for a more sustainable tomorrow.</p>
             </div>
             <div class="about-sub-and-btn">
                 <div class="about-sub-text" data-animate="fade-up">
@@ -99,7 +100,7 @@
         </div>
     </section>
     <!-- recognized 3rd section homepage ends -->
-
+    
     <!-- 4th section of home page  -->
     <section class="closer-look-section" data-animate-group>
         <div class="closer-look-container">
@@ -265,7 +266,7 @@
                   <path d="M4 6l8 6 8-6" stroke="currentColor" stroke-width="1.6" fill="none"/>
                 </svg>
               </span>
-              <a class="contact-link" href="mailto:info@biodapt.in">info@biodapt.in</a>
+              <a class="contact-link" href="mailto:biodpackaging@gmail.com">biodpackaging@gmail.com</a>
             </li>
           </ul>
         </div>

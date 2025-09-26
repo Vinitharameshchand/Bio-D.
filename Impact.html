@@ -12,10 +12,10 @@
   <!-- Header (kept minimal; content to be added step-by-step) -->
   <header>
     <nav class="navbar">
-      <div class="logo">
+      <a href="index.html" class="logo" style="text-decoration: none; color: inherit;">
         <img src="assets/logo/biodlogo.png" alt="Bio D" class="logo-img" />
         <span class="logo-text">Bio D</span>
-      </div>
+      </a>
       <ul class="nav-menu">
         <li><a href="solution.html">Solution</a></li>
         <li><a href="Impact.html">Impact</a></li>
@@ -32,6 +32,7 @@
 
   <!-- Impact content will be added here step by step -->
   <main id="impact-root">
+ 
     <!-- Impact Hero Layout with placeholders -->
     <section class="impact-hero" data-animate-group>
       <div class="impact-hero-container">
@@ -89,66 +90,9 @@
           <span class="snapshot-title">Impact Snapshot</span>
         </div>
 
-        <div class="snapshot-grid">
-          <!-- Card 1 -->
-          <div class="snapshot-item snapshot-item-first" data-animate="fade-up" style="--reveal-delay:0ms">
-            <div class="snapshot-row">
-              <div class="snapshot-number">00</div>
-              <div class="snapshot-icon" aria-hidden="true">
-                <!-- Bag icon -->
-                <svg width="44" height="44" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <path d="M7 7V6a5 5 0 0 1 10 0v1" stroke="#bfe3b2" stroke-width="1.8" stroke-linecap="round"/>
-                  <path d="M5 7h14l-1 12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 7Z" stroke="#bfe3b2" stroke-width="1.8" fill="none"/>
-                </svg>
-              </div>
-            </div>
-            <div class="snapshot-meta">MICRON SIZED</div>
-            <div class="snapshot-label">MICROPLASTICS</div>
-          </div>
-
-          <!-- Card 2 -->
-          <div class="snapshot-item" data-animate="fade-up" style="--reveal-delay:100ms">
-            <div class="snapshot-icon" aria-hidden="true">
-              <!-- Waste bin with check -->
-              <svg width="44" height="44" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M4 7h16" stroke="#bfe3b2" stroke-width="1.8"/>
-                <path d="M9 7V5h6v2" stroke="#bfe3b2" stroke-width="1.8"/>
-                <path d="M6 7l1 12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2l1-12" stroke="#bfe3b2" stroke-width="1.8" fill="none"/>
-                <path d="M16.5 15.5l1.8 1.8 3.2-3.2" stroke="#bfe3b2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </div>
-            <div class="snapshot-meta">UTILIZES WASTE</div>
-            <div class="snapshot-label">REDUCES AGRICULTURAL WASTE</div>
-          </div>
-
-          <!-- Card 3 -->
-          <div class="snapshot-item" data-animate="fade-up" style="--reveal-delay:200ms">
-            <div class="snapshot-icon" aria-hidden="true">
-              <!-- Recycle -->
-              <svg width="44" height="44" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M7 7l2.5-4 2.5 4H7Z" fill="#bfe3b2"/>
-                <path d="M4 13l-2 3.5 4.5.5" stroke="#bfe3b2" stroke-width="1.6"/>
-                <path d="M20 13l-2.5-1.5L20 9l2 3.5-2 0.5Z" fill="#bfe3b2"/>
-              </svg>
-            </div>
-            <div class="snapshot-meta">COMPLETELY</div>
-            <div class="snapshot-label">BIODEGRADABLE</div>
-          </div>
-
-          <!-- Card 4 -->
-          <div class="snapshot-item" data-animate="fade-up" style="--reveal-delay:300ms">
-            <div class="snapshot-icon" aria-hidden="true">
-              <!-- Calendar/Months -->
-              <svg width="44" height="44" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <rect x="3" y="5" width="18" height="16" rx="2" stroke="#bfe3b2" stroke-width="1.8"/>
-                <path d="M3 9h18" stroke="#bfe3b2" stroke-width="1.8"/>
-                <path d="M8 3v4M16 3v4" stroke="#bfe3b2" stroke-width="1.8" stroke-linecap="round"/>
-              </svg>
-            </div>
-            <div class="snapshot-number">06</div>
-            <div class="snapshot-meta">MONTHS</div>
-            <div class="snapshot-label">DEGRADATION RATE</div>
-          </div>
+        <div class="snapshot-image-wrapper" data-animate="fade-up">
+          <img src="assets/logo/impactsnapshotimage.png" alt="Impact Snapshot" class="snapshot-image">
+        </div>
 
           <!-- learn more button -->
           <a href="#" class="snapshot-cta" aria-label="Learn more" data-animate="fade-up" style="--reveal-delay:350ms">
@@ -159,7 +103,16 @@
       </div>
     </section>
 
-    <!-- Join Us / Metrics + Map (next page) -->
+   <!-- Impact parts images -->
+   <section class="impact-parts" aria-label="Impact overview images">
+    <div class="impact-parts-container">
+      <img src="assets/logo/impact part1.png" alt="Impact part 1" class="impact-part-img" />
+      <img src="assets/logo/impact part2.png" alt="Impact part 2" class="impact-part-img" />
+    </div>
+  </section>
+    
+
+    <!-- Join Us / Metrics + Map (next page)
     <section class="impact-join-section" data-animate-group>
       <div class="join-container">
         <div class="join-header" data-animate="fade-up">
@@ -167,7 +120,7 @@
         </div>
 
         <div class="join-grid">
-          <!-- Left: stacked metric cards (placeholders) -->
+          <!-- Left: stacked metric cards (placeholders)
           <div class="join-cards" data-animate-group>
             <div class="join-card dark" data-animate="fade-up" style="--reveal-delay:0ms">
               <div class="join-meta">Carbon Emissions</div>
@@ -181,25 +134,25 @@
             <div class="join-card green" data-animate="fade-up" style="--reveal-delay:220ms">
               <div class="join-pill"><b>0</b> Micron Microplastics</div>
             </div>
-          </div>
+          </div> -->
 
-          <!-- Center: three image placeholders like vertical cards -->
+          <!-- Center: three image placeholders like vertical cards
           <div class="join-images" data-animate-group>
             <div class="img-vert-card" data-animate="zoom-in" style="--reveal-delay:0ms"><div class="ph">Image</div></div>
             <div class="img-vert-card" data-animate="zoom-in" style="--reveal-delay:120ms"><div class="ph">Image</div></div>
             <div class="img-vert-card" data-animate="zoom-in" style="--reveal-delay:220ms"><div class="ph">Image</div></div>
-          </div>
+          </div> -->
 
-          <!-- Right: SDG and jobs + degrade pill (placeholders) -->
+          <!-- Right: SDG and jobs + degrade pill (placeholders)
           <div class="join-right" data-animate-group>
             <div class="join-pill-outline" data-animate="fade-up" style="--reveal-delay:0ms">Completely degrades within <b>6</b> months</div>
             <div class="join-image-card" data-animate="zoom-in" style="--reveal-delay:120ms"><div class="ph">Image</div><div class="join-jobs">Direct Jobs <b>100+</b></div></div>
             <div class="join-sdg-card" data-animate="fade-up" style="--reveal-delay:220ms"><div class="ph">SDG</div></div>
             <div class="join-pill-outline small" data-animate="fade-up" style="--reveal-delay:320ms">Replacement to <b>Microplastics</b></div>
           </div>
-        </div>
+        </div> -->
 
-        <!-- Bottom: India map row with right side text -->
+        <!-- Bottom: India map row with right side text 
         <div class="join-map-row" data-animate-group>
           <div class="map-placeholder" data-animate="zoom-in"><div class="ph">India Map</div></div>
           <div class="map-side-text" data-animate="fade-up" style="--reveal-delay:150ms">
@@ -209,7 +162,7 @@
         </div>
       </div>
     </section>
-  </main>
+  </main> -->
 
   <!-- Full-bleed landing background section: Voices/Testimonial -->
   <section class="impact-landing-bg-section" aria-label="Community voices" data-animate-group>
@@ -229,10 +182,10 @@
             <div class="ph">
               <img src="assets/logo/Supriya Panchangam.png" alt="Supriya Panchangam">
             </div>
-            <div class="voice-caption"><p>supriya panchangam</p></div>
-            
+            <div class="voice-caption"><p>Supriya Panchangam</p></div>
           </div>
         </div>
+      
 
         <!-- Right column -->
         <div class="voice-col" data-animate-group>
@@ -292,7 +245,7 @@
                 <path d="M4 6l8 6 8-6" stroke="currentColor" stroke-width="1.6" fill="none"/>
               </svg>
             </span>
-            <a class="contact-link" href="mailto:info@biodapt.in">info@biodapt.in</a>
+            <a class="contact-link" href="mailto:biodpackaging@gmail.com">biodpackaging@gmail.com</a>
           </li>
         </ul>
       </div>

@@ -6,33 +6,182 @@
 .solution-hero {
   position: relative;
   min-height: 100vh;
-  display: grid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
 }
 .solution-hero .solution-hero-container {
   width: 92vw;
   max-width: 1300px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr;
-  align-items: end;
-  padding-top: 8rem; /* clear sticky header */
+  display: flex;
+  flex-direction: left;
+  align-items: left ;
+  justify-content: left ;
+  padding: 0;
 }
-.solution-left { color: #f4efe5; }
+.solution-left {
+  color: #f4efe5;
+  text-align: left;
+  width: 100%;
+  max-width: 800px;
+}
 .solution-headline {
   font-family: 'Century Gothic paneuropean';
   font-size: 2.4rem;
   font-weight: 300;
   line-height: 1.25;
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.45);
   margin-bottom: 2rem;
 }
 .solution-headline .bold { font-weight: 700; }
 
+/* Solution Images Section - Matches Impact Part Images Styling */
+.solution-below-hero {
+  display: none; /* Completely remove the spacing element */
+  height: 0;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+  font-size: 0;
+}
+.solution-images { 
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+  background: transparent; 
+  font-size: 0;
+  position: relative;
+}
+
+.solution-images-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0;
+  grid-auto-rows: auto;
+  align-items: start;
+  line-height: 0;
+}
+
+.solution-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: none;
+  padding: 0;
+  margin: 0;
+  line-height: 0;
+  object-fit: contain;
+  box-sizing: border-box;
+}
+
+/* Solution Part 3 with background image and centered video */
+.solution-part3 {
+  width: 100%;
+  position: relative;
+  background-image: url('../assets/logo/solution image part3.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 80vh; /* Adjust this value based on your needs */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 0; /* Add some padding at top and bottom */
+}
+
+.solution-video-container {
+  width: 80%; /* Adjust the width of the video container */
+  max-width: 1000px; /* Maximum width of the video */
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Optional: adds a subtle shadow */
+  border-radius: 12px; /* Optional: rounds the corners */
+  overflow: hidden; /* Ensures the video respects the border radius */
+  aspect-ratio: 16/9; /* Maintain 16:9 aspect ratio */
+}
+
+.solution-video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover; /* Ensures video covers the container while maintaining aspect ratio */
+}
+
+/* Impact page: simple section for the two overview images */
+.impact-parts { 
+  width: 100vw; 
+  padding: 0;
+  margin: 0;
+  line-height: 0;  /* Removes line-height space */
+  background: transparent; 
+  font-size: 0;    /* Removes any font-size space */
+}
+.impact-parts-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0;
+  align-items: start;
+  line-height: 0;
+}
+.impact-part-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: none;
+  padding: 0;
+  margin: 0;
+  line-height: 0;
+  vertical-align: bottom ;  /* Removes space below images */
+  object-fit: contain;
+  box-sizing: border-box; /* removes any padding or border */
+}
+
+/* Exact desktop sizing as requested */
+/* Responsive sizing */
+@media (min-width: 1366px) {
+{{ ... }}
+  .impact-part-img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .impact-parts-container { 
+    grid-template-columns: 1fr; 
+    gap: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .impact-parts { 
+    padding: 0; 
+    margin: 0; 
+  }
+  .impact-parts-container { 
+    width: 100%; 
+    grid-template-columns: 1fr; 
+    gap: 0; 
+  }
+  .impact-part-img { 
+    max-width: 100%; 
+    border-radius: 0; 
+  }
+}
+
 .solution-metrics { display: grid; grid-auto-flow: column; align-items: start; gap: 1.8rem; }
-.metric { color: #f4efe5; }
+.metric { color: #ffffff; }
 .metric-number { font-size: 3.2rem; font-weight: 800; color: #e6c19c; line-height: 1; }
-.metric-unit { font-size: 0.9rem; letter-spacing: 1px; margin-top: 0.2rem; }
-.metric-label { max-width: 34ch; opacity: 0.95; margin-top: 0.4rem; }
+.metric-unit { font-size: 2rem; letter-spacing: 1px; margin-top: 0.2rem; align-items: right; }
+.metric-label { max-width: 34ch; opacity: 0.95; margin-top: 0.4rem;align-items: right; }
 .metric-divider { width: 2px; height: 80px; background: rgba(255,255,255,0.35); align-self: center; }
 
 .solution-cta { position: absolute; right: 4rem; bottom: 3rem; }
@@ -303,7 +452,7 @@ body.solution .hero-section {
     margin-bottom: 0.5rem;
 }
 .hero-title {
-    font-size: 6rem;
+    font-size: 8rem;  /* Increased from 7rem */
     font-weight: 400;
     margin-bottom: 1.2rem;
     letter-spacing: 1.5px;
@@ -313,32 +462,42 @@ body.solution .hero-section {
     font-family: 'Century Gothic paneuropean';
 }
 .hero-subtitle {
-    font-size: 3rem;                 /* bigger like the mock */
+    font-size: 5.5rem;              /* Increased from 4.5rem */
     font-weight: 400;
-    margin-bottom: 2.2rem;
-    line-height: 1.2;               /* tighter lines */
+    margin: 1.5rem 0 4rem 0;        /* More vertical spacing */
+    letter-spacing: 0.5px;
+    line-height: 1.4;               /* Slightly more line height */
     color: #f4efe5;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
     font-family: 'Century Gothic paneuropean';
-    font-style: italic;              /* overall italic phrase */
+    font-style: italic;
+    text-transform: none;
+    max-width: 90%;
 }
 /* Bold the emphasized words inside the subtitle */
-.hero-subtitle .highlight { font-weight: 500; }
+.hero-subtitle .highlight { 
+    font-weight: 700;               /* Bolder for emphasis */
+    letter-spacing: 0.5px;
+    position: relative;
+    color: #ffffff;                 /* Pure white for better contrast */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    padding: 0 0.2rem;             /* Slight horizontal padding */
+}
 /* Helper text at the bottom-left of the hero (e.g., Sustainability | Innovation | Impact)
    Positioned absolutely inside the hero so it aligns with the CTA button at the bottom. */
 .feature-tags-bottom {
     position: absolute;
-    left: 3rem;
-    bottom: 5.5rem;
+    left: 5rem;                 /* Aligned with other content */
+    bottom: 8.5rem;             /* Positioned to match CTA button */
     display: flex;              /* lay out tags in a row */
     align-items: center;
-    gap: 4rem;                  /* even spacing between tags */
-    font-size: 1.6rem;          /* bigger like the screenshot */
+    gap: 2.5rem;                /* Slightly reduced gap */
+    font-size: 1.8rem;          /* Increased from 1.6rem */
     color: #f4efe5;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.6px;      /* Slightly more letter spacing */
     z-index: 20;
     opacity: 0.95;
-    font-family: 'century gothic paneuropean';
+    font-family: 'Century Gothic paneuropean';  /* Fixed case */
     font-weight: 400;
     white-space: nowrap;        /* keep on one line */
 }
@@ -359,7 +518,7 @@ body.solution .hero-section {
 @media (max-width: 640px) {
   .feature-tags-bottom {
     gap: 1.25rem;
-    font-size: 1.1rem;
+    font-size: 1.25rem;  /* Slightly increased for mobile */
     left: 1.25rem;
     right: 1.25rem;
   }
@@ -637,61 +796,118 @@ body.solution .hero-section {
 .recognized-logos {
     display: flex;
     align-items: center;
-    gap: 4.5rem;                    /* more space between larger logos */
-    margin-left: 6rem;              /* larger buffer from the label */
-    min-width: max-content;          /* size to content for smooth scroll */
-    animation: logos-marquee 18s linear infinite; /* faster right-to-left */
-    will-change: transform;
-}
-.recognized-section:hover .recognized-logos { animation-play-state: paused; }
-
-@keyframes logos-marquee {
-  /* Start slightly inside the right edge */
-  0%   { transform: translateX(15%); }
-  /* End well before the label (stay within a small left shift) */
-  100% { transform: translateX(-5%); }
+    gap: 2rem;                  /* Increased gap between logos */
+    padding: 1rem 3rem;         /* Added more vertical padding */
+    flex-grow: 1;
+    justify-content: flex-start;
+    margin-left: 3rem;          /* Increased space from text */
 }
 .recognized-logo {
-    height: 80px;                    /* larger logos */
+    height: 100px;                   /* Increased from 85px */
     width: auto;
+    max-width: 200px;               /* Increased from 170px */
     object-fit: contain;
     filter: grayscale(1) brightness(1.2);
     background: transparent;
+    opacity: 0.9;
+    transition: all 0.3s ease;
+    transform: scale(1);
+}
+
+.recognized-logo:hover {
+    opacity: 1;
+    transform: scale(1.05);
+    filter: grayscale(0.8) brightness(1.3);
+}
+
+.recognized-logo:hover {
+    opacity: 1;
 }
 
 /* Subtle pop animation per logo, staggered */
+.recognized-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin: 2rem 0;
+    /* Ensure no animation properties */
+    animation: none !important;
+    transform: none !important;
+}
+
 .recognized-logo {
-  animation: logo-pop 1.8s ease-in-out infinite;
-}
-.recognized-logo:nth-child(1) { animation-delay: 0s; }
-.recognized-logo:nth-child(2) { animation-delay: 0.2s; }
-.recognized-logo:nth-child(3) { animation-delay: 0.4s; }
-.recognized-logo:nth-child(4) { animation-delay: 0.6s; }
-.recognized-logo:nth-child(5) { animation-delay: 0.8s; }
-
-@keyframes logo-pop {
-  0%, 80% { transform: scale(1); opacity: 1; }
-  90%     { transform: scale(1.08); opacity: 1; }
-  100%    { transform: scale(1); opacity: 1; }
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
 }
 
-/* Pause both marquee and pop on hover */
-.recognized-section:hover .recognized-logo { animation-play-state: paused; }
+/* Removed logo-pop animation */
 
 /* Accessibility: reduce motion if user prefers */
 @media (prefers-reduced-motion: reduce) {
-  .recognized-logos { animation: none; }
-  .recognized-logo { animation: none; }
+  /* No animations to reduce */
 }
 
 /* Keep the label from wrapping oddly and align dot with text */
 .recognized-bullet { white-space: nowrap; }
 
+@media (max-width: 992px) {
+  .recognized-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+  
+  .recognized-logos {
+    width: 100%;
+    margin-left: 0;
+    padding: 0.5rem 1.5rem;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 3rem 4rem;  /* Increased gaps */
+  }
+  
+  .recognized-logo {
+    height: 90px;    /* Increased from 75px */
+    max-width: 180px; /* Increased from 150px */
+  }
+}
+
 @media (max-width: 768px) {
-  .recognized-section { padding-left: 1.5rem; }
-  .recognized-container { width: 100vw; gap: 1rem; }
-  .recognized-logos { gap: 1.5rem; margin-left: 1rem; animation-duration: 14s; }
-  .recognized-logo { height: 64px; }
+  .recognized-section {
+    padding: 2rem 0;
+  }
+  
+  .recognized-container {
+    padding: 0 1.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .recognized-logos {
+    width: 100%;
+    margin: 1.5rem 0 0 0;
+    padding: 0 1rem;
+    gap: 2rem 2.5rem;  /* Increased gaps */
+    justify-content: center;  /* Center on mobile */
+    flex-wrap: wrap;
+  }
+  
+  .recognized-logo {
+    height: 80px;    /* Increased from 65px */
+    max-width: 150px; /* Increased from 130px */
+    margin: 0.5rem;  /* Added margin for better spacing */
+  }
+  
+  .recognized-bullet {
+    margin-bottom: 0.5rem;
+  }
 }
 .about-sub-and-btn {
     grid-column: 2 / 3;
@@ -777,37 +993,28 @@ body.home .about-section { margin-top: -2px; }
 }
 
 .about-bullet {
-    font-size: 1rem;
+    font-size: 1.8rem;  /* Increased from 1.4rem */
     color: #203020;
-    margin-bottom: 1rem;
-    font-family: 'Century Gothic paneuropean';
+    margin-bottom: 2rem;  /* More space below */
+    font-weight: 400;
+    font-family: 'Century Gothic paneuropean';  /* Fixed case */
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    /* plain text, no pill */
+    gap: 0.8rem;        /* Slightly more space between elements */
     background: transparent;
     border-radius: 0;
     padding: 0;
     border: none;
     font-style: italic;
-    margin-left: 0; /* ensure no extra left offset */
-    grid-column: 1 / 2;
-    justify-self: end;   /* move to right side within left rail */
-    align-self: start;
-    margin-top: 0.5rem;
-}
-
-
-.about-dot {
-    font-size: 1.8rem; /* larger bullet dot */
-    vertical-align: middle;
-    color: #203020;
-    margin-right: 0.4rem;
+    letter-spacing: 0.2px; /* added for better readability */
 }
 .about-bold {
-    font-weight: 700; /* stronger emphasis */
-    font-family: 'Century Gothic paneuropean';
-    letter-spacing: 0.3px;
+    font-size: 2rem;    /* Increased from 1.5rem */
+    font-weight: 700;   /* Strong emphasis */
+    font-family: 'Century Gothic paneuropean';  /* Fixed case */
+    letter-spacing: 0.4px;
+    color: #2c3e50;     /* Slightly darker for better contrast */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25); /* added for better contrast */
 }
 .about-main-text p {
     font-size: 2.6rem;        /* larger headline like mock */
@@ -822,7 +1029,7 @@ body.home .about-section { margin-top: -2px; }
     color: #203020; /* darker emphasis like mock */
 }
 .about-sub-text p {
-    font-size: 1.15rem;
+    font-size: 1.4rem;  /* Increased from 1.15rem */
     font-style: italic;
     color: #4b5a49;
     margin: 0;
@@ -861,8 +1068,8 @@ body.home .about-section { margin-top: -2px; }
 .feature-tags-bottom {
     position: absolute;
     left: 5rem;
-    bottom: 6.5rem;
-    font-size: 1.15rem;
+    bottom: 7.5rem; /* Moved up from 5.5rem */
+    font-size: 1.4rem;  /* Increased from 1.15rem */
     color: #f4efe5;
     letter-spacing: 0.5px;
     word-spacing: 1rem; /* add gaps between words */
@@ -873,16 +1080,23 @@ body.home .about-section { margin-top: -2px; }
     white-space: nowrap; /* keep on a single line parallel to CTA */
 }
 /* Align the Learn More button to the right in the hero section */
+/* CTA Button Wrapper - Aligned with feature tags */
 .cta-button-wrapper {
     position: absolute;
-    right: 1.5rem;
-    bottom: 6.5rem;
+    right: 5rem;
+    bottom: 8.5rem;
+    z-index: 1000;
+    cursor: pointer; /* Add pointer cursor */
     display: flex;
     justify-content: flex-end;
     width: auto;
     margin: 0;
     padding: 0;
-    z-index: 20;
+    align-items: center;
+    outline: none !important;
+    border: none !important;
+    background: none !important;
+    -webkit-tap-highlight-color: transparent !important;
 }
 .logo-large-title-col {
     display: flex;
@@ -911,6 +1125,7 @@ body.solution,
 body.impact,
 body.aboutus {
     font-family: 'Century Gothic';
+    
 }
 
 /* Dark overlay for better text readability */
@@ -1075,7 +1290,7 @@ body.solution .hamburger { justify-self: unset; display: flex; }
 .cta-button-wrapper {
     position: absolute;
     right: 4.5rem;
-    bottom: 6.5rem;
+    bottom: 8.5rem; /* Moved up from 6.5rem */
     display: flex;
     justify-content: flex-end;
     width: auto;
@@ -1110,7 +1325,7 @@ body.solution .hamburger { justify-self: unset; display: flex; }
 }
 
 .hero-title {
-    font-size: 6rem;
+    font-size: 7rem;  /* Increased from 6rem */
     font-weight: 400;
     margin-bottom: 1.2rem;
     letter-spacing: 1.5px;
@@ -1134,10 +1349,35 @@ body.solution .hamburger { justify-self: unset; display: flex; }
     font-style: italic;
     font-weight: 600;
 }
-.cta-button {
-    /* Cream rounded pill like the reference */
-    background: rgba(244,239,229,0.9);
-    color: #2d3a23;
+/* CTA Button Base Styles */
+.cta-button,
+.cta-button:active,
+.cta-button:focus,
+.cta-button:hover,
+.cta-button:focus-visible,
+.cta-button:focus-within {
+    /* Clean button with no borders */
+    background: #4a5c40;
+    color: #f4efe5;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+    border: none !important;
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+    -webkit-focus-ring-color: transparent !important;
+    outline-offset: 0 !important;
+    -webkit-touch-callout: none !important;
+    -webkit-user-modify: read-only !important;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+    -webkit-tap-highlight-color: transparent !important;
     border: none;
     padding: 0.9rem 1.6rem 0.9rem 1.6rem; /* taller and wider */
     font-size: 1.6rem;                    /* larger label */
@@ -1167,8 +1407,163 @@ body.solution .hamburger { justify-self: unset; display: flex; }
     margin-right: -0.4rem;  /* overlap the pill edge slightly */
 }
 
-.cta-button:hover { background: rgba(244,239,229,0.95); }
+.cta-button:hover { 
+    background: #3a4a32;
+    border: none;
+    outline: none; 
+}
 .cta-button:hover .arrow { transform: translateX(2px); }
+
+/* CTA Image Button - No Movement */
+.cta-button-image {
+    width: 650px;
+    height: 230px;
+    object-fit: contain;
+    display: block; /* Ensure it's a block element */
+    cursor: pointer; /* Show pointer cursor on hover */
+    position: relative; /* Ensure proper stacking context */
+    z-index: 1001; /* Ensure it's above the wrapper */
+    pointer-events: auto; /* Ensure it can receive clicks */
+    border: none !important;
+    outline: none !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+    display: block;
+    pointer-events: none !important;
+    /* Prevent all animations and transforms */
+    transform: none !important;
+    -webkit-transform: none !important;
+    -moz-transform: none !important;
+    -ms-transform: none !important;
+    -o-transform: none !important;
+    transition: none !important;
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -o-transition: none !important;
+    animation: none !important;
+    -webkit-animation: none !important;
+    -moz-animation: none !important;
+    -o-animation: none !important;
+    will-change: auto !important;
+    backface-visibility: visible !important;
+    perspective: none !important;
+    transform-style: flat !important;
+}
+
+/* CTA Image Link - No Hover Effects */
+.cta-image-link,
+.cta-image-link:active,
+.cta-image-link:focus,
+.cta-image-link:hover,
+.cta-image-link:focus-visible,
+.cta-image-link:focus-within,
+.cta-image-link *,
+.cta-image-link:active *,
+.cta-image-link:focus *,
+.cta-image-link:hover *,
+.cta-image-link:focus-visible *,
+.cta-image-link:focus-within * {
+    display: inline-block;
+    text-decoration: none !important;
+    border: none !important;
+    outline: none !important;
+    background: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    -webkit-tap-highlight-color: transparent !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+    cursor: pointer !important;
+    /* Disable all animations and transforms */
+    transform: none !important;
+    -webkit-transform: none !important;
+    -moz-transform: none !important;
+    -ms-transform: none !important;
+    -o-transform: none !important;
+    transition: none !important;
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -o-transition: none !important;
+    animation: none !important;
+    -webkit-animation: none !important;
+    -moz-animation: none !important;
+    -o-animation: none !important;
+    will-change: auto !important;
+    backface-visibility: visible !important;
+    perspective: none !important;
+    transform-style: flat !important;
+    /* Prevent any layout shifts */
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+}
+
+/* Ensure clickable area works properly */
+.cta-button-wrapper {
+    transform: none !important;
+    -webkit-transform: none !important;
+    -moz-transform: none !important;
+    pointer-events: auto !important;
+    -ms-transform: none !important;
+    -o-transform: none !important;
+    transition: none !important;
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -o-transition: none !important;
+    animation: none !important;
+    -webkit-animation: none !important;
+    -moz-animation: none !important;
+    -o-animation: none !important;
+    filter: none !important;
+    -webkit-filter: none !important;
+    -moz-filter: none !important;
+    -ms-filter: none !important;
+    -o-filter: none !important;
+    will-change: auto !important;
+    backface-visibility: visible !important;
+    perspective: none !important;
+    transform-style: flat !important;
+    /* Prevent any layout shifts */
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+}
+
+.cta-image-link {
+    display: block;
+    position: relative;
+    z-index: 1002; /* Highest z-index in the stack */
+    pointer-events: auto; /* Ensure it can receive clicks */
+    text-decoration: none; /* Remove any default link styling */
+    width: fit-content; /* Only take up as much space as needed */
+    height: auto; /* Allow natural height */
+}
+
+.cta-image-link:active .cta-button-image {
+    transform: none !important;
+    opacity: 0.9; /* Slight visual feedback on click */
+}
+
+/* Focus state for accessibility */
+.cta-image-link:focus {
+    outline: 2px solid #81c784;
+    outline-offset: 2px;
+    border-radius: 4px;
+}
 
 
 .highlight {
@@ -1178,7 +1573,12 @@ body.solution .hamburger { justify-self: unset; display: flex; }
 }
 
 @media (max-width: 768px) {
-  .hero-subtitle { font-size: 2.2rem; line-height: 1.25; }
+  .hero-subtitle { 
+    font-size: 3.3rem;             /* Increased from 3rem */
+    line-height: 1.3;
+    letter-spacing: 0.3px;
+    margin: 1rem 0 2.5rem 0;
+  }
 }
 
 /* Home and Solution overrides after removing hero background */
@@ -1192,21 +1592,56 @@ body.home::before {
 }
 
 /* INDEX (home) PAGE BACKGROUND: apply image to body so it shows behind header */
-body.home { 
-    background: url('../assets/logo/landing page bg.png') no-repeat center center;
-    background-size: cover;
-}
-body.solution { 
-    background: url('../assets/logo/landing page bg.png') no-repeat center center;
-    background-size: cover;
+html, body.home {
+    min-height: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
-/* Solution spacer section below hero to reveal dark green when scrolling */
-.solution-below-hero {
-  width: 100vw;
-  min-height: 100vh; /* one full screen */
-  background: transparent; /* let body background image show */
-  scroll-snap-align: start;
+body.home { 
+    background: url('../assets/logo/landing page bg.png') no-repeat center center fixed;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+    width: 100%;
+}
+body.solution { 
+    background: url('../assets/logo/landing page bg.png') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    width: 100%;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+}
+
+/* Solution Image Section */
+.solution-image-section {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background: #fff; /* or any other background color you prefer */
+}
+
+.solution-image-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.solution-main-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Additional Solution Content */
+.solution-additional-content {
+  width: 100%;
+  padding: 2rem 0;
+  background: #fff; /* or any other background color you prefer */
 }
 
 /* INDEX (home) HERO SECTION ONLY
@@ -1287,10 +1722,35 @@ body.home .highlight, body.solution .highlight {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-.cta-button {
-    /* Ensure any later rules keep the snapshot look */
-    background: rgba(244,239,229,0.9);
-    color: #2d3a23;
+/* CTA Button Base Styles */
+.cta-button,
+.cta-button:active,
+.cta-button:focus,
+.cta-button:hover,
+.cta-button:focus-visible,
+.cta-button:focus-within {
+    /* Clean button with no borders */
+    background: #4a5c40;
+    color: #f4efe5;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+    border: none !important;
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+    -webkit-focus-ring-color: transparent !important;
+    outline-offset: 0 !important;
+    -webkit-touch-callout: none !important;
+    -webkit-user-modify: read-only !important;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+    -webkit-tap-highlight-color: transparent !important;
     padding: 0.6rem 1rem;
     font-size: 1.1rem;
     font-weight: 600;
@@ -1300,11 +1760,18 @@ body.home .highlight, body.solution .highlight {
     text-shadow: none;
 }
 
-.cta-button:hover { transform: none; box-shadow: none; }
+.cta-button:hover { 
+    transform: none !important; 
+    box-shadow: none !important;
+    background: #3a4a32 !important;
+    border: none !important;
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+}
 
 .arrow {
     transition: transform 0.3s ease;
-    font-size: 1.2rem;
+    font-size: 1.7rem;  /* Significantly increased from 1.5rem */
 }
 
 .cta-button:hover .arrow {
@@ -1360,7 +1827,7 @@ body.home .highlight, body.solution .highlight {
 
 .aboutus-link {
     color: #fff;
-    font-size: 1.1rem;
+    font-size: 1.3rem;  /* Increased from 1.1rem */
     text-decoration: underline;
     font-style: italic;
     margin-top: 1.5rem;
@@ -1595,11 +2062,24 @@ body.home .highlight, body.solution .highlight {
   font-size: 1.35rem;
 }
 
+.snapshot-image-wrapper {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.snapshot-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
 .snapshot-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 1.5rem;
-  align-items: center;
+  display: none; /* Hide the original grid */
 }
 
 .snapshot-item {
@@ -1734,6 +2214,59 @@ body.home .highlight, body.solution .highlight {
   .voice-quote { max-width: 60ch; }
 }
 
+/* ------------------------------ */
+/* Global Responsive Enhancements */
+/* ------------------------------ */
+img, video { max-width: 100%; height: auto; }
+
+/* About section: stack on narrow screens */
+@media (max-width: 900px) {
+  .about-container { grid-template-columns: 1fr; gap: 1.5rem; width: 92vw; }
+  .about-bullet { justify-self: start; }
+  .about-main-text { max-width: 65ch; }
+  .about-btn-row { justify-content: center; }
+}
+
+/* Impact hero padding on tablets/phones */
+@media (max-width: 900px) {
+  .impact-hero { padding: 2.2rem 1.4rem; }
+}
+@media (max-width: 540px) {
+  .impact-hero { padding: 1.8rem 1rem; }
+}
+
+/* Fluid typography for key headings/subheads */
+.hero-title { font-size: clamp(3.2rem, 8vw, 7rem); }  /* Increased min and max values */
+.hero-subtitle { font-size: clamp(1rem, 2.5vw, 1.6rem); }
+.impact-headline { font-size: clamp(1.6rem, 2.2vw + 1rem, 2.8rem); }
+.voices-title { font-size: clamp(1.8rem, 3vw, 2.4rem); }
+.voice-quote { font-size: clamp(0.95rem, 1.2vw, 1.05rem); }
+
+/* Tighten long-line headings on very small phones */
+@media (max-width: 380px) {
+  .impact-headline { max-width: 30ch; }
+}
+
+/* Mobile layout for recognized logos */
+@media (max-width: 576px) {
+  .recognized-logos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on very small screens */
+    gap: 1rem;
+    padding: 0.5rem;
+  }
+  
+  .recognized-logo {
+    height: 35px;
+    max-width: 75px;
+    margin: 0 auto; /* center logos in their grid cells */
+  }
+  
+  .recognized-bullet {
+    font-size: 1.1rem;
+  }
+}
+
 /* About Us Members Section */
 .aboutus-members-section {
   background: #2d3a23; /* dark green like reference */
@@ -1812,8 +2345,10 @@ body.home .highlight, body.solution .highlight {
   background-color: transparent; /* no solid color behind team images */
   background-image: url('../assets/logo/teambg_aboutus.png');
   background-repeat: no-repeat;
-  background-position: center center;
-  background-size: 110% auto; /* 110% zoom */
+  background-position: center bottom;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
   padding: 3rem 0 4rem 0; /* space for member content inside */
   margin: 0;
 }
@@ -1840,7 +2375,7 @@ body.home .highlight, body.solution .highlight {
 }
 .aboutus-team-dot {
   font-size: 1.5rem;
-  vertical-align: middle;
+  vertical-align:left;
   color: #2d3a23;
   margin-right: 0.5rem;
 }
@@ -1894,7 +2429,7 @@ body.home .highlight, body.solution .highlight {
     }
     
     .hero-title {
-        font-size: 4rem;
+        font-size: 5rem;  /* Increased from 4rem */
     }
     
     .hero-subtitle {
@@ -1939,12 +2474,14 @@ body.home .highlight, body.solution .highlight {
     }
     
     .hero-title {
-        font-size: 3rem;
+        font-size: 4rem;  /* Increased from 3rem */
     }
     
     .hero-subtitle {
-        font-size: 1.3rem;
-        margin-bottom: 2rem;
+        font-size: 2.5rem;         /* Increased from 2.2rem */
+        margin: 0.8rem 0 2rem 0;
+        letter-spacing: 0.2px;
+        max-width: 95%;
     }
     /* Larger tap targets for dropdown items */
     .nav-menu a { font-size: 1.05rem; padding: 0.6rem 1rem; }
@@ -1972,14 +2509,27 @@ body.home .highlight, body.solution .highlight {
     }
 }
 
+@media (max-width: 640px) {
+    .hero-title {
+        font-size: 4.5rem;  /* Increased from 3.2rem */
+        letter-spacing: 1px;
+    }
+    .hero-subtitle {
+        font-size: 3.5rem;  /* Increased for mobile */
+        line-height: 1.3;
+    }
+}
+
 @media (max-width: 480px) {
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 3.8rem;  /* Increased from 3.2rem */
         letter-spacing: 1px;
     }
     
     .hero-subtitle {
-        font-size: 1.1rem;
+        font-size: 2.2rem;         /* Increased from 1.9rem */
+        line-height: 1.4;
+        margin: 0.5rem 0 1.8rem 0;
     }
     
     .navbar {
@@ -2001,7 +2551,9 @@ body.home .highlight, body.solution .highlight {
     
     .cta-button {
         padding: 0.8rem 2rem;
-        font-size: 1rem;
+        font-size: 1.5rem;  /* Significantly increased from 1.3rem */
+        border: none;
+        outline: none;
     }
 }
 
@@ -2020,30 +2572,158 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Focus states for accessibility */
+/* Aggressive outline and focus removal */
+.cta-button,
 .cta-button:focus,
-.nav-menu a:focus {
-    outline: 2px solid #81c784;
-    outline-offset: 2px;
+.cta-button:focus-visible,
+.cta-button:focus-within,
+.cta-button:active,
+.cta-button:focus:active,
+.cta-button:focus-visible:active,
+.cta-button:focus-within:active,
+.cta-button:-moz-focusring,
+.cta-button::-moz-focus-inner,
+.cta-button:focus:not(:focus-visible),
+.cta-button:focus-visible:not(:focus-visible),
+.cta-button:focus-visible:focus:not(:focus-visible) {
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+    -webkit-focus-ring-color: transparent !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+}
+
+/* Remove outline for WebKit browsers */
+.cta-button::-moz-focus-inner {
+    border: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* Remove outline for Firefox */
+.cta-button::-moz-focus-outer {
+    border: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* Remove outline for IE/Edge */
+.cta-button::-ms-clear,
+.cta-button::-ms-expand,
+.cta-button::-ms-reveal {
+    display: none !important;
+}
+
+/* Remove outline for all states */
+.cta-button:active,
+.cta-button:focus,
+.cta-button:hover,
+.cta-button:visited,
+.cta-button:focus-visible,
+.cta-button:focus-within {
+    outline: 0 !important;
+    outline-offset: 0 !important;
+    -webkit-tap-highlight-color: transparent !important;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+    -webkit-user-modify: read-only !important;
+    -webkit-touch-callout: none !important;
+}
+
+/* Remove active state styling */
+.cta-button:active {
+    -webkit-tap-highlight-color: transparent !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+    transform: none !important;
+    background: #3a4a32 !important;
+    border: none !important;
+    outline: none !important;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+/* Remove focus ring for mouse users but keep for keyboard navigation */
+.cta-button:focus:not(:focus-visible) {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* Remove outline for touch devices */
+@media (hover: none) {
+    .cta-button:active,
+    .cta-button:focus,
+    .cta-button:hover {
+        -webkit-tap-highlight-color: transparent !important;
+        outline: none !important;
+    }
 }
 
 /* About Us full-page background */
 body.aboutus {
-    background: url('../assets/logo/landing page bg.png') no-repeat center top;
-    background-size: cover;
-    min-height: 100vh;
+   background: url('../assets/logo/landing page bg.png') no-repeat center center fixed;
+   background-size: cover;
+   min-height: 100vh;
+   width: 100%;
+   background-attachment: fixed;
+   margin: 0;
+   padding: 0;
 }
 
 /* Impact page full background */
 body.impact {
-    background: url('../assets/logo/landing page bg.png') no-repeat center top;
-    background-size: cover;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    /* Enable page snapping for hero -> snapshot flow */
-    scroll-snap-type: y mandatory;
-    overflow-y: auto;
+   margin: 0;
+   padding: 0;
+   min-height: 100vh;
+   width: 100%;
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   scroll-snap-type: y mandatory;
+   overflow-y: auto;
+   z-index: 1;
+}
+
+/* Fixed background for impact page */
+body.impact::before {
+   content: '';
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: url('../assets/logo/landing page bg.png') no-repeat center fixed;
+   background-size: cover;
+   background-attachment: fixed;
+   z-index: 1; /* Keep this above the default but below content */
+   /* Ensure it covers the whole viewport */
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+   pointer-events: none; /* Allow clicks to pass through to elements below */
+}
+
+/* Ensure content scrolls over the fixed background */
+body.impact > * {
+   position: relative;
+   z-index: 2; /* Ensure content is above the background */
+}
+
+/* Ensure the Impact page main fills remaining space so footer stays at bottom */
+#impact-root {
+  flex: 1 0 auto;
 }
 
 /* Ensure the Impact page main fills remaining space so footer stays at bottom */
