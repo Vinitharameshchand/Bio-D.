@@ -818,7 +818,7 @@ body.home .about-section { margin-top: -2px; }
     max-width: 48ch;          /* control line length */
 }
 .about-strong {
-    font-weight: 700;
+    font-weight: 500;
     color: #203020; /* darker emphasis like mock */
 }
 .about-sub-text p {
